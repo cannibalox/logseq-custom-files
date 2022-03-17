@@ -11,5 +11,17 @@
 
 ## How-to use/install
 
-- if you are not using any custom.js or custom.css, copy the files into your `%graph-name%/logseq/` folder.
-- alternatively, if you don't want to overwrite your current files or are only interested in some of the utilites, open the each file with a text editor/code editor then copy-paste the relevant sections into your own files (some utilities require to copy sections from both custom.js **and** custom.css to work, also make sure to include the mutation observer declaration at the start of the custom;js), the utilities are separated by comments sections with descriptive names, use the search function to find what you need.
+- if you are not using any custom.js[^1] or custom.css, copy the files into your `%graph-name%/logseq/` folder.
+- alternatively, if you don't want to overwrite your current files or are only interested in some of the utilites, open the each file with a text editor/code editor then copy-paste the relevant sections into your own custom.js/custom.css files (some utilities require to copy sections from **both** custom.js **and** custom.css to work, also make sure to include the mutation observer declaration at the start of the custom.js), use the search function to find the relevant snippets delimited by comments with descriptive names.
+
+[^1]: - custom.js has been introduced in logseq on 2021-11-10, see details here https://github.com/logseq/logseq/pull/2943
+    - the custom.js file is **not** created by the default installer, it has to be created manually in /logseq
+    - Before executing the code, the user will be asked for execution permission.
+    - When the content of the custom.js file is modified, it needs to be restarted or refreshed to take effect.
+    
+## help me improve the utilities
+
+- if you know how to improve or optimize the utilities, make a PR :)
+- you can also buy me a coffee 
+
+I will be adding more js snippets and css customizations to this repo
