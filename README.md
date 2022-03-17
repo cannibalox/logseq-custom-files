@@ -21,7 +21,8 @@
     
 ## help me improve the utilities
 
-- if you know how to improve or optimize the utilities, make a PR :)
-- you can also buy me a coffee 
+- I'm glad to accept Pull Requests if you know how to improve or optimize the utilities
+- if you find this useful, you can also buy me a coffee :) <br><br>
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/O5O1BN89Y)
 
-I will be adding more js snippets and css customizations to this repo
+more js snippets and css customizations are coming soon, stay tuned
