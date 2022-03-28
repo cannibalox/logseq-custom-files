@@ -1,4 +1,4 @@
-/* logseq table resizer v20220314b ======================= */
+/* logseq table resizer v20220329 ======================= */
 /* add rules to custom.css =============================== */
         .table th {
             position: relative;
@@ -19,25 +19,25 @@
             border-right: 2px solid rgb(255, 0, 0);
         }
 
-        .dsl-query table.table-auto {
+        .custom-query table.table-auto {
             width: -webkit-fill-available;
             table-layout: fixed;
         }
-        .dsl-query .table-auto>thead>tr>th {
+        .custom-query .table-auto>thead>tr>th {
             border-bottom: 1px solid var(--ls-border-color);
         }
-        .dsl-query .table-auto>thead>tr>th {
+        .custom-query .table-auto>thead>tr>th {
             background-color: rgba(0, 0, 0, 0.1);
             padding: 3px 6px;
         }
-        .dsl-query .table-auto>tbody>tr>td.whitespace-nowrap {
+        .custom-query .table-auto>tbody>tr>td.whitespace-nowrap {
             overflow-wrap: break-word;
             min-width: 20px;
             white-space: normal;
             font-weight: 300;
             font-size: 13px;
         }
-        .dsl-query .table-auto>tbody>tr>.whitespace-nowrap img {
+        .custom-query .table-auto>tbody>tr>.whitespace-nowrap img {
             max-height: 120px;
             margin: 0;
         }
