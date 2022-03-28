@@ -1,7 +1,7 @@
 # logseq-custom-files
 **custom.js** and **custom.css** utilities for Logseq.
 
-## current version v20220314
+## current version v20220329
 
 * **query table view** : add handles on the query table headers to resize column width (not persistent)
 ![20220312_NUC8_M49yriOEAH](https://user-images.githubusercontent.com/4605693/158709862-5eb0917f-8b84-4c0b-be9e-bf84eda4e042.gif)
@@ -26,3 +26,7 @@
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/O5O1BN89Y)
 
 more js snippets and css customizations are coming soon, stay tuned
+
+## changelog
+
+- **v20220329** : fix for advanced queries
