@@ -1,17 +1,18 @@
-/* logseq table resizer v20220329 ======================= */
+/* logseq table resizer v20220331 ======================= */
 /* add rules to custom.css =============================== */
         .table th {
             position: relative;
         }
         .query-table-resizer {
-            /* Displayed at the right side of column */
             position: relative;
             top: -20px;
-            right: 0;
+            float: right;
             margin-bottom: -18px;
             cursor: col-resize;
             user-select: none;
             border-right: 1px solid var(--ls-border-color);
+            width: 10px; /* hitbox width */
+            height: 20px; 
         }
 
         .query-table-resizer:active,
