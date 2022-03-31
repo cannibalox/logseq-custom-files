@@ -55,7 +55,7 @@ MutationObserver = window.MutationObserver || window.WebKitMutationObserver;
       const table = document.querySelectorAll(".table-auto:not(.table-resizable)");
       for (let i = 0; i < table.length; i++) {
         // Query all headers1
-        const cols = table[i].querySelectorAll("th.whitespace-nowrap");
+        const cols = table[i].querySelectorAll("thead tr > th.whitespace-nowrap");
         // Loop ver them
         Array.from(cols).forEach((col) => {
           // Create a resizer element
@@ -63,8 +63,6 @@ MutationObserver = window.MutationObserver || window.WebKitMutationObserver;
           resizer.classList.add("query-table-resizer");
           table[i].classList.add("table-resizable");
           console.info("-- injected div.query-table-resizer --");
-          // Set the height
-          resizer.style.height = "20px";
           // Add a resizer element to the column
           col.appendChild(resizer);
           createResizableColumn(col, resizer);
