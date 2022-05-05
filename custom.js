@@ -12,7 +12,7 @@ MutationObserver = window.MutationObserver || window.WebKitMutationObserver;
       }
     };
   };
-
+  const watchTarget = document.getElementById("app-container"); 
 // query table resizer ============================================== 
 // source : https://htmldom.dev/resize-columns-of-a-table/   
     console.log("========= query table resizer v20220312 ============");
@@ -72,7 +72,6 @@ MutationObserver = window.MutationObserver || window.WebKitMutationObserver;
 
     const updateTablesThrottled = throttle(updateTables, 1000);
     const obsTable = new MutationObserver(updateTablesThrottled);
-    const watchTarget = document.getElementById("app-container");
     obsTable.observe(watchTarget, {
       subtree: true,
       childList: true,
