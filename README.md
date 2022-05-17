@@ -1,13 +1,17 @@
 # logseq-custom-files
 **custom.js** and **custom.css** utilities for Logseq.
 
-## current version v20220331
+## current version v20220517
 
 * **query table view resizer** : add handles on the query table headers to resize column width (not persistent)
 ![20220312_NUC8_M49yriOEAH](https://user-images.githubusercontent.com/4605693/158709862-5eb0917f-8b84-4c0b-be9e-bf84eda4e042.gif)
 
 * **namespace prefixes collapser** : collapse namespace prefixes eg: [[prefix/page/test]] becomes [[../test]] (use the hover tootip to see the original name or enter edit mode)
 ![20220314_NUC8_cMu56YIkrd](https://user-images.githubusercontent.com/4605693/158709836-762e4274-6604-4df8-9d1f-3d0260c6545c.gif)
+
+* **twitter embeds** : fetches and embeds tweets and timelines without using logseq's internal syntax `{{tweet https://twitter.com/username/status/id}}`. just write the url. just insert a tweet url inline. sample with logtool's kanban css to display latest tweets :
+![Logseq_DASHBOARD_20220517_1586](https://user-images.githubusercontent.com/4605693/168820686-4af1e0b5-e638-4b00-ac23-0fce80427755.png)
+
 
 ## How-to use/install
 
