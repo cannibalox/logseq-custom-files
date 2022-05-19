@@ -3,7 +3,7 @@
 
 ## current version v20220517
 
-* **query table view resizer** : add handles on the query table headers to resize column width (not persistent)
+* **query table view resizer** : add handles on the query table headers to resize column width
 ![20220312_NUC8_M49yriOEAH](https://user-images.githubusercontent.com/4605693/158709862-5eb0917f-8b84-4c0b-be9e-bf84eda4e042.gif)
 
 * **namespace prefixes collapser** : collapse namespace prefixes eg: [[prefix/page/test]] becomes [[../test]] (use the hover tootip to see the original name or enter edit mode)
