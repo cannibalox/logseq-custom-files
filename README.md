@@ -33,5 +33,6 @@ more js snippets and css customizations are coming soon, stay tuned
 
 ## changelog
 
+- **v20220517** : add function for tweet embed
 - **v20220331** : fix sorting : resizer handle was overlapping the table headers. moved style to custom.css
 - **v20220329** : fix for advanced queries
