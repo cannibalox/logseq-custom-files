@@ -104,6 +104,93 @@
   });
 //===================================== end of namespace prefixes collapser 
 
+// property data-refs =====================================
+// injects [data-refs-self='property'] attributes to property divs 
+// to be used in the next functions + custom.css
+
+console.log("========= property data-ref v20220329 ============");
+const addPropDataRef = function () {
+  console.log("addPropDataRef running...");
+  const propertiesBlocks = document.querySelectorAll(
+    "#main-content-container .page.relative > .relative .block-properties:not(.datarefd)" //.page.relative > .relative => main container only
+  );
+  for (let i = 0; i < propertiesBlocks.length; i++) {
+    const propertySpan = propertiesBlocks[i].children; 
+    Array.from(propertySpan).forEach((divProp) => {
+      let propName = divProp.firstChild.innerHTML;
+      // console.log("   property : ", propName);
+      divProp.setAttribute("data-refs-self", propName);
+      // check if special-property
+      /** 
+       *  cover-pic : top banner
+       *  cover-pic-height : height of banner
+       *  bg-pic : background image
+       */
+/*           if (propName == "cover-pic") {
+          document.querySelector(".page-blocks-inner").classList.add("has-coverPic");
+          console.log("   .has-coverPic injected");
+        };  */// injects class to page-blocks-inner to add top-padding in custom.css
+        switch (propName) {
+          case "cover-pic":
+            document
+              .querySelector(".page.relative > .relative .page-blocks-inner")
+              .classList.add("has-coverPic");
+            // console.log("   .has-coverPic injected");
+            break;
+          case "cover-pic-height":
+            // console.log("   .has-coverPic injected");
+            break; // TODO
+        }
+    });
+    propertiesBlocks[i].classList.add("datarefd");
+  }
+};
+
+const addPropDataRefThrottled = throttle(addPropDataRef, 1000);
+const obsProps = new MutationObserver(addPropDataRefThrottled);
+obsProps.observe(
+  watchTarget,
+  {
+    subtree: true,
+    childList: true,
+  }
+);
+
+// =====================================end of property data-refs
+
+// add bg-pic =======================================
+console.log("========= bg-pic v20220327 ============");
+const addbgPic = function () {
+  console.log("addbgPic running...");
+  const bgPic = document.querySelectorAll(
+    "[data-refs-self='bg-pic']"
+  );
+  console.log("has bgpic : ", bgPic.length);
+  if (bgPic.length > 0) {
+    const bgPica = Array.from(bgPic).filter(
+      (item) => !item.closest(".references-blocks")
+    );
+    console.log("bg-pic exists : ", bgPica.length);
+    console.log("bg-pic parent : ", bgPica);
+    if (bgPica.length > 0) {
+      const bgPicUrl = bgPica[0].getElementsByTagName("img")[0].src;
+      console.log("bg-pic url : ", bgPicUrl);
+      document.getElementById(
+        "main-content-container"
+      ).style.backgroundImage = "url(" + bgPicUrl + ")";
+    }
+  } else {
+    document.getElementById("main-content-container").removeAttribute("style");
+  };
+};
+const addbgPicThrottled = throttle(addbgPic, 1000);
+const addbg = new MutationObserver(addbgPicThrottled);
+addbg.observe(watchTarget, {
+  subtree: true,
+  childList: true,
+});
+// =====================================end of bg-pic
+
 // ====== LS-TWITTER-EMBED =============================================
   console.info('====== LS-TWITTER-EMBED ======');
   // add twitter script and meta tags to head
