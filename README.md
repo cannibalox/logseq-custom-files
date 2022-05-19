@@ -1,7 +1,7 @@
 # logseq-custom-files
 **custom.js** and **custom.css** utilities for Logseq.
 
-## current version v20220517
+## current version v20220519
 
 * **query table view resizer** : add handles on the query table headers to resize column width
 ![20220312_NUC8_M49yriOEAH](https://user-images.githubusercontent.com/4605693/158709862-5eb0917f-8b84-4c0b-be9e-bf84eda4e042.gif)
@@ -33,6 +33,7 @@ more js snippets and css customizations are coming soon, stay tuned
 
 ## changelog
 
-- **v20220517** : add function for tweet embed
+- **v20220517** : new: add function to add properties to the data-refs attributes; new: add bg-pic attribute
+- **v20220517** : new: add function for tweet embed
 - **v20220331** : fix sorting : resizer handle was overlapping the table headers. moved style to custom.css
 - **v20220329** : fix for advanced queries
