@@ -1,0 +1,87 @@
+/* ==========  RIGHT SIDEBAR - shrinking panes w/ horizontal scroll v20221217==============================*/
+/* ==========  https://github.com/cannibalox/logseq-custom-files/better-sidebar.css =======================*/
+:root {
+    --sidebarItemMinWidth: 250px;
+    --sidebarItemMaxWidth: 950px;
+}
+
+.cp__right-sidebar-inner.flex.flex-col.h-full {
+    overflow: visible;
+}
+
+.sidebar-item-list {
+    width: fit-content;
+    height: 96vh !important;
+    overflow: unset;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    padding: 0 0 0 6px;
+}
+
+.cp__right-sidebar .sidebar-item {
+    display: inline-block;
+    align-self: flex-start;
+    overflow-y: auto;
+    min-height: 75px;
+    height: calc(100% - 10px) !important;
+    min-width: var(--sidebarItemMinWidth);
+    max-width: var(--sidebarItemMaxWidth);
+    width: 100%;
+    margin: 0px;
+    background-color: var(--ls-primary-background-color);
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
+    border: 1px solid black;
+    border-radius: 10px;
+    resize: both;
+    padding: 1.5rem 0.5rem;
+}
+
+.cp__right-sidebar-inner .resizer {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 6px;
+    user-select: none;
+    cursor: col-resize !important;
+    z-index: 10;
+}
+
+.cp__right-sidebar .resizer:hover {
+    background-color: var(--ph-highlight-strong);
+}
+
+.cp__right-sidebar-scrollable {
+    overflow-y: hidden;
+    overflow-x: auto;
+    height: 100%;
+}
+
+/* sliding panes */
+.sidebar-item.folded {
+    display: inline-block;
+    overflow: hidden;
+    margin: 0px 0 !important;
+    padding: 5px;
+    resize: none;
+    width: 40px !important;
+    min-width: 40px;
+    writing-mode: vertical-LR;
+}
+
+.sidebar-item.folded .rotating-arrow.collapsed svg {
+    transform: rotate(180deg) translate(3px, -1.2rem);
+    transition: none;
+}
+
+.sidebar-item.folded .ml-1.font-medium {
+    margin-top: 2rem;
+    transition: none;
+}
+
+.cp__right-sidebar .sidebar-item.folded .close {
+    transform: scale(.8) translate(-8px);
+    transition: transform .1s;
+}
