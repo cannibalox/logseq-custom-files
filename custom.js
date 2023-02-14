@@ -108,53 +108,34 @@
 // injects [data-refs-self='property'] attributes to property divs 
 // to be used in the next functions + custom.css
 
-console.log("========= property data-ref v20220329 ============");
-const addPropDataRef = function () {
-  console.log("addPropDataRef running...");
-  const propertiesBlocks = document.querySelectorAll(
-    "#main-content-container .page.relative > .relative .block-properties:not(.datarefd)" //.page.relative > .relative => main container only
-  );
-  for (let i = 0; i < propertiesBlocks.length; i++) {
-    const propertySpan = propertiesBlocks[i].children; 
-    Array.from(propertySpan).forEach((divProp) => {
-      let propName = divProp.firstChild.innerHTML;
-      // console.log("   property : ", propName);
-      divProp.setAttribute("data-refs-self", propName);
-      // check if special-property
-      /** 
-       *  cover-pic : top banner
-       *  cover-pic-height : height of banner
-       *  bg-pic : background image
-       */
-/*           if (propName == "cover-pic") {
-          document.querySelector(".page-blocks-inner").classList.add("has-coverPic");
-          console.log("   .has-coverPic injected");
-        };  */// injects class to page-blocks-inner to add top-padding in custom.css
+  console.log("========= property data-ref v20220715 ============");
+  const addPropDataRef = function () {
+    console.log("addPropDataRef running...");
+    const propertiesBlocks = document.querySelectorAll(
+      "#main-content-container .page.relative > .relative .block-properties:not(.datarefd)" //.page.relative > .relative => main container only
+    );
+    for (let i = 0; i < propertiesBlocks.length; i++) {
+      const propertySpan = propertiesBlocks[i].children;
+      Array.from(propertySpan).forEach((divProp) => {
+        console.log("   divProp : ", divProp);
+        let propName = divProp.firstChild.innerText;
+        console.log("   property : ", propName);
+        divProp.setAttribute("data-refs-self", propName);
         switch (propName) {
           case "cover-pic":
             document
               .querySelector(".page.relative > .relative .page-blocks-inner")
               .classList.add("has-coverPic");
-            // console.log("   .has-coverPic injected");
+            console.log("   .has-coverPic injected");
             break;
           case "cover-pic-height":
-            // console.log("   .has-coverPic injected");
+            console.log("   .has-coverPic injected");
             break; // TODO
         }
-    });
-    propertiesBlocks[i].classList.add("datarefd");
-  }
-};
-
-const addPropDataRefThrottled = throttle(addPropDataRef, 1000);
-const obsProps = new MutationObserver(addPropDataRefThrottled);
-obsProps.observe(
-  watchTarget,
-  {
-    subtree: true,
-    childList: true,
-  }
-);
+      });
+      propertiesBlocks[i].classList.add("datarefd");
+    }
+  };
 
 // =====================================end of property data-refs
 
