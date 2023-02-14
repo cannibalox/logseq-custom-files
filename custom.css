@@ -133,3 +133,7 @@
         }
 
 /* ======================================== end of BETTER-SIDEBAR =====*/
+/* ==== hide special props ==========================*/
+        div[data-refs-self="bg-pic"] {
+            display: none !important;
+        }
