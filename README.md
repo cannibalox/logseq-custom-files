@@ -12,8 +12,8 @@
 * **twitter embeds** : fetches and embeds tweets and timelines without using logseq's internal syntax `{{tweet https://twitter.com/username/status/id}}`, instead just write the tweet url inline (benefits: it doesn't add extra markup to the source file and it shows timelines). a demo with Logtool's kanban css to display latest tweets :
 ![Logseq_DASHBOARD_20220517_1586](https://user-images.githubusercontent.com/4605693/168820686-4af1e0b5-e638-4b00-ac23-0fce80427755.png)
 
-* **better sidebar.css** : a custom.css to enhance the right sidebar : replaces the vertical scroll by horizontal panes (collapsible and resizable). inspired by the sliding panes/matuschak mode with imporved useability.<br> 
-INSTALL : edit your `custom.css` file to add `@import url("https://cdn.jsdelivr.net/gh/cannibalox/logseq-custom-files@master/better-sidebar.css");` or manually copy/paste the rules.
+* **better sidebar* : enhance the right sidebar : replaces the vertical scroll by horizontal panes (collapsible and resizable). inspired by the sliding panes/matuschak mode with imporved useability.<br> 
+This workds in conjunction with a custom.js snippet, if you don't want to use this sidebar mod, you need to REMOVE the better-diebar javascript (edit the custom.js and comment out or remove the lines)
 ![ss_Logseq_All_pages_20230213_V5ihMcrohP](https://user-images.githubusercontent.com/4605693/218562643-542a8455-1845-43df-ab90-d89d87cdb5cd.gif)
 
 
