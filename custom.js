@@ -137,40 +137,90 @@
     }
   };
 
+  const addPropDataRefThrottled = throttle(addPropDataRef, 1000);
+  const obsProps = new MutationObserver(addPropDataRefThrottled);
+  obsProps.observe(
+    watchTarget,
+    {
+      subtree: true,
+      childList: true,
+    }
+  );
+
 // =====================================end of property data-refs
 
 // add bg-pic =======================================
-console.log("========= bg-pic v20220327 ============");
-const addbgPic = function () {
-  console.log("addbgPic running...");
-  const bgPic = document.querySelectorAll(
-    "[data-refs-self='bg-pic']"
-  );
-  console.log("has bgpic : ", bgPic.length);
-  if (bgPic.length > 0) {
-    const bgPica = Array.from(bgPic).filter(
-      (item) => !item.closest(".references-blocks")
+  console.log("========= bg-pic v20220327 ============");
+  const addbgPic = function () {
+    console.log("addbgPic running...");
+    const bgPic = document.querySelectorAll(
+      "[data-refs-self='bg-pic']"
     );
-    console.log("bg-pic exists : ", bgPica.length);
-    console.log("bg-pic parent : ", bgPica);
-    if (bgPica.length > 0) {
-      const bgPicUrl = bgPica[0].getElementsByTagName("img")[0].src;
-      console.log("bg-pic url : ", bgPicUrl);
-      document.getElementById(
-        "main-content-container"
-      ).style.backgroundImage = "url(" + bgPicUrl + ")";
-    }
-  } else {
-    document.getElementById("main-content-container").removeAttribute("style");
+    console.log("has bgpic : ", bgPic.length);
+    if (bgPic.length > 0) {
+      const bgPica = Array.from(bgPic).filter(
+        (item) => !item.closest(".references-blocks")
+      );
+      console.log("bg-pic exists : ", bgPica.length);
+      console.log("bg-pic parent : ", bgPica);
+      if (bgPica.length > 0) {
+        const bgPicUrl = bgPica[0].getElementsByTagName("img")[0].src;
+        console.log("bg-pic url : ", bgPicUrl);
+        document.getElementById(
+          "main-content-container"
+        ).style.backgroundImage = "url(" + bgPicUrl + ")";
+      }
+    } else {
+      document.getElementById("main-content-container").removeAttribute("style");
+    };
   };
-};
-const addbgPicThrottled = throttle(addbgPic, 1000);
-const addbg = new MutationObserver(addbgPicThrottled);
-addbg.observe(watchTarget, {
-  subtree: true,
-  childList: true,
-});
+  const addbgPicThrottled = throttle(addbgPic, 1000);
+  const addbg = new MutationObserver(addbgPicThrottled);
+  addbg.observe(watchTarget, {
+    subtree: true,
+    childList: true,
+  });
 // =====================================end of bg-pic
+
+// ============ BETTER-SIDEBAR rotate closed tabs in right sidebar=========
+// ============ remove if you don't use the better-sidebar.css=============
+  console.log("========= rsidebar fold 90° ============");
+  const foldTab = function () {
+    let foldedTab = document.querySelectorAll(
+      ".sidebar-item.content > .flex.flex-col > .flex.flex-row"
+    );
+    if (foldedTab.length > 0) {
+      let foldedTabsArray = Array.from(foldedTab);
+      console.log("sidebar tabs : ", foldedTabsArray.length);
+      for (let i = 0; i < foldedTabsArray.length; i++) {
+        if (foldedTabsArray[i].nextElementSibling.classList.contains("hidden")) {
+          // console.log("fold detected: ", foldedTabsArray[i].nextElementSibling, " is folded.");
+          let tab = foldedTabsArray[i].closest(".sidebar-item.content");
+          tab.classList.add("folded");
+        } else {
+          if (
+            foldedTabsArray[i].nextElementSibling.classList.contains("initial") &&
+            foldedTabsArray[i]
+              .closest(".sidebar-item.content")
+              .classList.contains("folded")
+          ) {
+            console.log("this one is unfolded !!!");
+            let tab = foldedTabsArray[i].closest(".sidebar-item.content");
+            tab.classList.remove("folded");
+          }
+        }
+      }
+    }
+  };
+  const foldTabthrottled = throttle(foldTab, 300);
+  const foldTabs = new MutationObserver(foldTabthrottled);
+  const sidebarTarget = document.querySelector(".sidebar-item-list");
+  foldTabs.observe(watchTarget, {
+    subtree: true,
+    childList: true,
+    attributes: true,
+  });
+// =================== end of rotate closed tabs in right sidebar =========
 
 // ====== LS-TWITTER-EMBED =============================================
   console.info('====== LS-TWITTER-EMBED ======');
