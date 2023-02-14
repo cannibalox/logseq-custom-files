@@ -37,6 +37,7 @@ more js snippets and css customizations are coming soon, stay tuned
 
 ## changelog
 
+- **v20230214** : new: add better-sidebar, fix: props data-refs (`bg-pic::`)
 - **v20220517** : new: add function to add properties to the data-refs attributes; new: add bg-pic attribute
 - **v20220517** : new: add function for tweet embed
 - **v20220331** : fix sorting : resizer handle was overlapping the table headers. moved style to custom.css
