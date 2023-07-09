@@ -60,6 +60,7 @@ More js snippets and css customizations are coming soon, stay tuned
 
 ## changelog
 
+- **v20230709** : fix better-sidebar's arrow location for logseq 0.9.10
 - **v20230214** : new: add better-sidebar, fix: props data-refs (`bg-pic::`)
 - **v20220517** : new: add function to add properties to the data-refs attributes; new: add bg-pic attribute
 - **v20220517** : new: add function for tweet embed
