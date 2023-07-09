@@ -1,7 +1,7 @@
 # logseq-custom-files
 **custom.js** and **custom.css** utilities for Logseq.
 
-## Current Version v20230213
+## Current Version v20230709
 
 ### **Query table view resizer** :
 Add handles on the query table headers to resize column width
