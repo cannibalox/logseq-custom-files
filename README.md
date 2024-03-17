@@ -1,7 +1,7 @@
 # logseq-custom-files
 **custom.js** and **custom.css** utilities for Logseq.
 
-## Current Version v20230709
+## Current Version v20240317
 
 ### **Query table view resizer** :
 Add handles on the query table headers to resize column width
@@ -60,6 +60,7 @@ More js snippets and css customizations are coming soon, stay tuned
 
 ## changelog
 
+- **v20240317** : fix better-sidebar css to work with logseq 0.10.x - depreceting support for older logseq versions
 - **v20230709** : fix better-sidebar's arrow location for logseq 0.9.10
 - **v20230214** : new: add better-sidebar, fix: props data-refs (`bg-pic::`)
 - **v20220517** : new: add function to add properties to the data-refs attributes; new: add bg-pic attribute
