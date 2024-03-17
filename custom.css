@@ -44,97 +44,113 @@
         }
 /* ==================================== end of table resizer */
 
-/* ==========  BETTER-SIDEBAR - right sidebarshrinking panes w/ horizontal scroll v20221217==================*/
-
+/* ==========  BETTER SIDEBAR - shrinking panes w/ horizontal scroll 20240317 =======================================*/
     :root {
         --sidebarItemMinWidth: 250px;
-        --sidebarItemMaxWidth: 950px;
+        --sidebarItemMaxWidth: 650px;
     }
 
     .cp__right-sidebar-inner.flex.flex-col.h-full {
-        overflow: visible;
+        overflow: auto;
+        padding-top: 50px;
     }
     .cp__right-sidebar.open {
         max-width: 80vw;
-        width: var(--ls-right-sidebar-width);
+        background-color: var(--ls-secondary-background-color);
+        height: 100%;
     }
     .sidebar-item-list {
         width: fit-content;
-        height: 96vh !important;
-        overflow: unset;
+        height: 95vh !important;
+        overflow-x: auto;
+        overflow-y: hidden;
         display: flex;
         flex-direction: column;
-        flex-wrap: wrap;
+        flex-wrap:wrap;
         align-content: flex-start;
-        padding: 0 0 0 6px;
+        padding: 0 0px 0px 6px;
     }
-
     .cp__right-sidebar .sidebar-item {
-        display: inline-block;
-        align-self: flex-start;
-        overflow-y: auto;
-        min-height: 75px;
-        height: calc(100% - 10px) !important;
-        min-width: var(--sidebarItemMinWidth);
-        max-width: var(--sidebarItemMaxWidth);
-        width: 100%;
-        margin: 30px 0 0 0;
+        display: block; 
+        overflow-y: auto;   
+        min-width: var(--sidebarItemMinWidth) !important;
+        max-width: var(--sidebarItemMaxWidth) !important;
+        margin: 0px 3px;
         background-color: var(--ls-primary-background-color);
         box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
         border: 1px solid black;
-        border-radius: 10px;
-        resize: both;
-        padding: 1.5rem 0.5rem;
+        border-radius: 6px;
+        padding: 0.25rem 0;
+        overflow-x: hidden;
+        resize: horizontal;
+        min-height: calc(95vh - 22px) !important;
+        height: calc(95vh - 22px) !important;
     }
-
-    .cp__right-sidebar-inner .resizer {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
+    .cp__right-sidebar .resizer {
         width: 6px;
-        user-select: none;
-        cursor: col-resize !important;
+        transition-delay: 0.1s;
         z-index: 10;
     }
-
     .cp__right-sidebar .resizer:hover {
         background-color: var(--ph-highlight-strong);
     }
 
-    .cp__right-sidebar-scrollable {
-        overflow-y: hidden;
-        overflow-x: auto;
-        height: 100%;
-    }
-
     /* sliding panes */
-    .sidebar-item.folded {
+    .sidebar-item.collapsed {
         display: inline-block;
         overflow: hidden;
-        margin: 30px 0 0 0;               
-        padding: 5px;
+        margin: 8px 3px;
+        padding: 0.25px;
         resize: none;
-        width: 40px !important;
-        min-width: 40px;
-        writing-mode: vertical-LR;
+        width: 38px !important;
+        min-width: 38px !important;
+        min-height: calc(95vh - 22px) !important;
+        height: calc(95vh - 22px) !important;
     }
-    .sidebar-item.folded .rotating-arrow.collapsed {
-        margin-top: 26px;
+    .cp__right-sidebar .sidebar-item.collapsed .sidebar-item-header > button {
+        width: 38px;
+        align-items: start;
+        margin: 12px 0;
+        padding: 0.25rem;
     }
-    .sidebar-item.folded .rotating-arrow.collapsed svg {
-        transform: rotate(180deg) translate(3px, 0px);
+    .cp__right-sidebar .sidebar-item.collapsed .sidebar-item-header .ml-1.font-medium.overflow-hidden {
+        margin-top: 1.5rem;
+    }
+    .sidebar-item.collapsed .rotating-arrow.collapsed {
+        margin-top: 0px;
+    }
+    .sidebar-item.collapsed .rotating-arrow.collapsed svg {
+        transform: rotate(180deg) translate(-2px, 5px);
         transition: none;
     }
-
-    .sidebar-item.folded .ml-1.font-medium {
-        margin-top: 0.5rem;
+    .sidebar-item.collapsed .ml-1.font-medium {
+        margin-top: 2.5rem;
         transition: none;
+        margin-left: -20px;
     }
-
-    .cp__right-sidebar .sidebar-item.folded .close {
-        transform: scale(.8) translate(-8px);
-        transition: transform .1s;
+     .cp__right-sidebar .sidebar-item .sidebar-item-header {
+        position: sticky;
+        background-color: var(--ls-secondary-background-color);
+        z-index: 20;
+        top:-6px;
+        height: 36px;
+        border-radius: 0;
+    }
+    .cp__right-sidebar .sidebar-item.collapsed .sidebar-item-header {
+        position: static;
+        height: auto;
+        width:36px;
+    }
+    .cp__right-sidebar .sidebar-item.collapsed > .flex.flex-col.w-full.relative > .sidebar-item-header > button > div.ml-1 > div {
+        writing-mode: vertical-lr !important;
+    } 
+     .cp__right-sidebar .sidebar-item.collapsed > .flex.flex-col.w-full.relative > .sidebar-item-header > button > div.ml-1 > div > span {
+        padding: 0.5rem 0 0 0;
+    }
+    .cp__right-sidebar .sidebar-item.collapsed .item-actions.flex.items-center {
+        align-items: start;
+        position: absolute;
+        top: 84vh;
     }
 
 /* ======================================== end of BETTER-SIDEBAR =====*/
