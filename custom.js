@@ -204,7 +204,7 @@
               .closest(".sidebar-item.content")
               .classList.contains("folded")
           ) {
-            console.log("this one is unfolded !!!");
+            //console.log("this one is unfolded !!!");
             let tab = foldedTabsArray[i].closest(".sidebar-item.content");
             tab.classList.remove("folded");
           }
